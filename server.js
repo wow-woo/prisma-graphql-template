@@ -1,9 +1,16 @@
+import { PrismaClient } from ".prisma/client/index.js";
 import { gql, ApolloServer } from "apollo-server";
+
+const client = new PrismaClient();
 
 const typeDefs = gql`
   type Buffet {
+    id: Int
     appetite: String
     main: String
+    price: Int
+    createdAt: String
+    updatedAt: String
   }
   type Query {
     morning: String
@@ -29,16 +36,12 @@ const resolvers = {
       main: "chicken",
     }),
 
-    receipt: () => [
-      { appetite: "01", main: "01main" },
-      { appetite: "02", main: "02main" },
-      { appetite: "03", main: "03main" },
-    ],
+    receipt: () => [client.buffet.findMany()],
   },
 
   Mutation: {
     changeDinner: (_, { menu }) => {
-      return { appetite: null, main: menu.name };
+      return { main: menu.name, ...client.buffet };
     },
   },
 };

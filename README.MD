@@ -79,3 +79,22 @@ type Character {
 name: String!
 appearsIn: [Episode]!
 }
+
+### Postgres
+
+- when we connect under development (localhost), there is NO password checking.
+- connection to a Database with name and owner of.
+
+### Prisma
+
+#### Prisma Migrate
+
+- npx prisma migrate
+  sync prisma schema to database (SQL schema), according to schema.prisma
+- npx prisma migrate dev
+  sync prisma schema to database (SQL schema), according to schema.prisma with auto-generated prisma client for development.
+- register all schema changes and recorded as SQL in migration.sql
+
+#### Prisma Server
+
+- Provide database data migrated.

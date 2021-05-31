@@ -2,6 +2,6 @@ import client from "../../prismaClient";
 
 export default {
   Query: {
-    dishes: () => [client.buffet.findMany()],
+    dishes: () => client.buffet.findMany(),
   },
 };

@@ -127,3 +127,9 @@ appearsIn: [Episode]!
 
 - \_\_filename 은 현재 실행 중인 파일 경로
 - \_\_dirname 은 현재 실행 중인 폴더 경로
+
+### dotenv
+
+Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
+
+- npm i dotenv

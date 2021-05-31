@@ -28,6 +28,16 @@
 - typeDefs (graphQL type object with graphQL schema langue)
 - resolvers
 
+#### gql
+
+- gql template literal tag can be used to concisely write a GraphQL query that is parsed into a standard GraphQL AST. It is the recommended method for passing queries to Apollo Client.
+
+#### graphQL AST
+
+- AST = abstract syntax tree
+- graphQL server processes graphQL AST
+- graphQL queries are in tree structure, not in raw strings
+
 #### graphQL objects
 
 - type
@@ -80,12 +90,11 @@ name: String!
 appearsIn: [Episode]!
 }
 
-### Postgres
-
-- when we connect under development (localhost), there is NO password checking.
-- connection to a Database with name and owner of.
-
 ### Prisma
+
+#### Postgres
+
+- connection to a Database with name and owner of.
 
 #### Prisma Migrate
 
@@ -98,3 +107,23 @@ appearsIn: [Episode]!
 #### Prisma Server
 
 - Provide database data migrated.
+
+#### Prisma studio
+
+- npx prisma studio
+  visual editor server running on browser
+- you can CRUD on database
+
+### graphql-tools
+
+- npm i graphql-tools
+  Integrate multiple typeDefs and multiple resolvers in ONE respectively.
+
+- create 'makeExecutableSchema' with merged typeDefs and merged resolvers.
+
+- Build A big schema with A big resolver.
+
+### file system
+
+- \_\_filename 은 현재 실행 중인 파일 경로
+- \_\_dirname 은 현재 실행 중인 폴더 경로

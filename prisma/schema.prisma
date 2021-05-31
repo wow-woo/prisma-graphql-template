@@ -14,7 +14,7 @@ model Buffet{
     id Int @id @default(autoincrement())
     appetite String
     main String
-    prices Int?
+    price Int?
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 }
